@@ -7,7 +7,12 @@ import router from './router';
 import store from './store';
 
 Vue.config.productionTip = false;
-Vue.prototype.$http = Axios;
+Vue.prototype.$http = Axios.create({
+  baseURL: process.env.VUE_APP_BASE_URL,
+  headers: {
+    'access-token': process.env.VUE_APP_ACCESS_TOKEN,
+  },
+});
 
 Vue.use(BootstrapVue);
 

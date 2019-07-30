@@ -1,0 +1,11 @@
+files:
+  include: 'src/assets/scss/**/*.s+(a|c)ss'
+
+# Rule Configuration
+# reference: https://github.com/sasstools/sass-lint/tree/master/docs/rules/
+rules:
+  no-url-domains:
+    - 0
+
+  no-url-protocols:
+    - 0

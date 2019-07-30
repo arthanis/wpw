@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <header class="header mb-5">
+    <header class="header">
       <Navigation />
     </header>
 
-    <main>
+    <main class="pb-5">
       <div class="container">
         <pageTitle :pageTitle="pageTitle" />
         <router-view/>

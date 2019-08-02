@@ -11,7 +11,6 @@
                             <i class="fa fa-star" v-for="i in song.rating" :key="i"></i>
                         </div>
                     </div>
-
                 </div>
             </li>
         </ul>

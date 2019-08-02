@@ -1,5 +1,4 @@
 // Fonts & icons
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap&subset=latin-ext');
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 // Variables
@@ -7,3 +6,7 @@
 
 // Vendors
 @import 'vendors/bootstrap';
+
+// Components
+@import 'components/buttons';
+@import 'components/cards';

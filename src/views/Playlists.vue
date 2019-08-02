@@ -1,19 +1,23 @@
 <template>
-    <div class="row">
-        <div class="col-lg-6" v-for="playlist in playlists" :key="playlist.id">
-            <div class="card" >
-                <div class="card-body">
-                    <h5 class="card-title"><strong>{{ playlist.name }}</strong></h5>
+    <div class="wrapper">
+        <div class="d-flex mb-5">
+            <button class="btn btn-primary">Add playlist</button>
+        </div>
 
-                    <ul v-if="playlist.songs">
-                        <li v-for="song in playlist.songs" :key="song.songId">
-                            <strong>ID: </strong> {{ song.songId }} <br>
-                            <strong>Position: </strong> {{ song.position }}
-                        </li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Details</a>
+        <div class="playlists">
+            <template v-for="playlist in playlists">
+                <div class="card card--light" v-if="playlist.id" :key="playlist.id">
+                    <div class="card-body">
+                        <p class="card-title"><strong>{{ playlist.name }}</strong></p>
+                        <p class="card-details">{{ playlist.songs.length }} song(s)</p>
+
+                        <router-link class="btn btn-secondary btn--icon-right card-action"
+                                    :to="{ name: 'playlist', params: { id: playlist.id }}">
+                            Details <i class="fa fa-chevron-right"></i>
+                        </router-link>
+                    </div>
                 </div>
-            </div>
+            </template>
         </div>
     </div>
 </template>

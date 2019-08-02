@@ -1,0 +1,31 @@
+.btn {
+  display: flex;
+  align-items: center;
+
+  &.btn--icon-right {
+    .fa {
+      margin-left: 10px;
+    }
+  }
+
+  .fa {
+    font-size: 14px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .btn {
+    padding-right: $btn-padding-x * 2;
+    padding-left: $btn-padding-x * 2;
+
+    &:hover {
+      .fa {
+        transform: translateX(2px);
+      }
+    }
+
+    .fa {
+      transition: .3s;
+    }
+  }
+}

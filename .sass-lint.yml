@@ -9,3 +9,10 @@ rules:
 
   no-url-protocols:
     - 0
+
+  property-sort-order:
+    - 1
+    - order: smacss
+
+  no-color-literals
+    - 0

@@ -1,0 +1,46 @@
+.card {
+  &.card--light {
+    background: $white;
+    border-color: #ddd;
+
+    & + .card {
+      margin-top: $grid-gutter-width / 2;
+    }
+
+    .card-body {
+      padding: $grid-gutter-width / 2;
+    }
+
+    .card-details {
+      color: $gray-600;
+      font-size: 15px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .card {
+    &.card--light {
+      transition: .3s;
+
+      .card-body {
+        display: flex;
+        align-items: center;
+      }
+
+      .card-title,
+      .card-details {
+        margin-bottom: 0;
+      }
+
+      .card-details {
+        margin-left: 10px;
+        line-height: 1;
+      }
+
+      .card-action {
+        margin-left: auto;
+      }
+    }
+  }
+}

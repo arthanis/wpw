@@ -14,5 +14,5 @@ rules:
     - 1
     - order: smacss
 
-  no-color-literals
+  no-color-literals:
     - 0

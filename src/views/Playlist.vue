@@ -48,10 +48,7 @@ export default {
           .then((res) => {
             res.data.songs.forEach((song) => {
               this.playlistSongsIds.forEach((playlistSongsId) => {
-                console.log(song.id, playlistSongsId, song.id === playlistSongsId);
-                if (song.id === playlistSongsId) {
-                  this.songs.push(song);
-                }
+                if (song.id === playlistSongsId) this.songs.push(song);
               });
             });
           });

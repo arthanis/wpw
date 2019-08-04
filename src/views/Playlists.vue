@@ -1,7 +1,9 @@
 <template>
     <div class="wrapper">
         <div class="d-flex mb-5">
-            <button class="btn btn-primary">Add playlist</button>
+            <router-link class="btn btn-primary btn--icon-right" :to="{ name: 'addPlaylist'}">
+                Add playlist <i class="fa fa-plus"></i>
+            </router-link>
         </div>
 
         <div class="playlists">

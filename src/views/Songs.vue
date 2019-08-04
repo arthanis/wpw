@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper">
         <ul class="list-group">
             <li class="list-group-item" v-for="song in songs" :key="song.id">
                 <div class="mb-0">

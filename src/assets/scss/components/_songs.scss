@@ -17,6 +17,7 @@
 
   .song__rating {
     width: 100px;
+    margin: 10px 10px 10px 0;
   }
 }
 
@@ -26,7 +27,7 @@
     align-items: center;
 
     .song__rating {
-      margin-left: auto;
+      margin: 0 10px 0 auto;
     }
   }
 }

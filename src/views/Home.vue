@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
-    <p>home content...</p>
+    <h2>Welcome to WPW!</h2>
+    <p>You can manage your songs and playlists.</p>
   </div>
 </template>
 

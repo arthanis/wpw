@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import Home from './views/Home.vue';
 import Songs from './views/Songs.vue';
+import Song from './views/Song.vue';
 import Playlists from './views/Playlists.vue';
 import Playlist from './views/Playlist.vue';
 import AddPlaylist from './views/AddPlaylist.vue';
@@ -26,6 +27,14 @@ const router = new Router({
         title: 'Songs',
       },
       component: Songs,
+    },
+    {
+      path: '/song/:id',
+      name: 'song',
+      meta: {
+        title: 'Song profile',
+      },
+      component: Song,
     },
     {
       path: '/playlists',

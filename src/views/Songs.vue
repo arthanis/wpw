@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <ul class="list-group">
-            <li class="list-group-item" v-for="song in songs" :key="song.id">
+            <li class="list-group-item" :data-id="song.id" v-for="song in songs" :key="song.id">
                 <div class="song">
                     <div class="song__meta">
                         <p class="song__title">{{ song.title }}</p>
@@ -9,7 +9,7 @@
                     </div>
 
                     <div class="song__rating">
-                        <i class="fa fa-star" v-for="i in song.rating" :key="i"></i>
+                        <rating :rating="song.rating" :id="song.id" />
                     </div>
                 </div>
             </li>
@@ -18,9 +18,13 @@
 </template>
 
 <script>
+import Rating from '@/components/Rating.vue';
+
 export default {
   name: 'songs',
-  components: {},
+  components: {
+    rating: Rating,
+  },
   data() {
     return {
       songs: [],

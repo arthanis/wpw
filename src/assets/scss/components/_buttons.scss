@@ -1,6 +1,10 @@
 .btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+
+  &.btn-block {
+    display: flex;
+  }
 
   &.btn--icon-right {
     .fa {

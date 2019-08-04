@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper" v-if="playlist !== null">
         <h2 class="d-flex align-items-center">
-            {{ playlist.name }} (<span class="mr-2 text-black-50">#{{ playlist.id }}</span>)
+            {{ playlist.name }} (<span class="text-black-50">#{{ playlist.id }}</span>)
         </h2>
 
         <ul class="list-unstyled">

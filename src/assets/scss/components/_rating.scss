@@ -1,0 +1,23 @@
+.rating {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+
+  .rating__stars--active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .fa {
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
+  }
+}

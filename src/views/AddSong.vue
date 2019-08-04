@@ -25,7 +25,7 @@ export default {
     return {
       name: '',
       loading: false,
-      buttonText: 'Add playlist',
+      buttonText: 'Add song',
       showMessage: false,
     };
   },

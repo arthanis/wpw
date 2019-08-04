@@ -1,7 +1,7 @@
 .card {
   &.card--light {
+    border-color: $gray-400;
     background: $white;
-    border-color: #ddd;
 
     & + .card {
       margin-top: $grid-gutter-width / 2;
@@ -11,9 +11,16 @@
       padding: $grid-gutter-width / 2;
     }
 
+    .card-title,
     .card-details {
+      margin-bottom: 10px;
+    }
+
+    .card-details {
+      margin-left: 10px;
       color: $gray-600;
       font-size: 15px;
+      line-height: 1;
     }
   }
 }
@@ -31,11 +38,6 @@
       .card-title,
       .card-details {
         margin-bottom: 0;
-      }
-
-      .card-details {
-        margin-left: 10px;
-        line-height: 1;
       }
 
       .card-action {

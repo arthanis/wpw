@@ -10,8 +10,10 @@
             <template v-for="playlist in playlists">
                 <div class="card card--light" v-if="playlist.id" :key="playlist.id">
                     <div class="card-body">
-                        <p class="card-title"><strong>{{ playlist.name }}</strong></p>
-                        <p class="card-details">{{ playlist.songs.length }} song(s)</p>
+                        <div class="d-flex align-items-center">
+                            <p class="card-title"><strong>{{ playlist.name }}</strong></p>
+                            <p class="card-details">{{ playlist.songs.length }} song(s)</p>
+                        </div>
 
                         <router-link class="btn btn-secondary btn--icon-right card-action"
                                     :to="{ name: 'playlist', params: { id: playlist.id }}">

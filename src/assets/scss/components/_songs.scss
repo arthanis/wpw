@@ -1,0 +1,28 @@
+.song {
+  .song__title,
+  .song__perfomer {
+    margin-bottom: 0;
+    line-height: 1.2;
+  }
+
+  .song__title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .song__perfomer {
+    color: $gray-600;
+    font-size: 14px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .song {
+    display: flex;
+    align-items: center;
+
+    .song__rating {
+      margin-left: auto;
+    }
+  }
+}

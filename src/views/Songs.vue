@@ -1,5 +1,7 @@
 <template>
     <div class="wrapper">
+        <p v-if="isLoading"><strong>loading songs...</strong></p>
+
         <ul class="list-group">
             <li class="list-group-item" :data-id="song.id" v-for="song in songs" :key="song.id">
                 <div class="song">
@@ -40,17 +42,20 @@ export default {
       songs: [],
       playlists: [],
       selectedSongs: [],
+      isLoading: false,
     };
   },
   created() {
+    this.isLoading = true;
     this.$http.get('songs')
       .then((res) => {
         this.songs = res.data.songs;
-      });
+        this.isLoading = false;
 
-    this.$http.get('playlists')
-      .then((res) => {
-        this.playlists = res.data.playlists;
+        this.$http.get('playlists')
+          .then((playlistRes) => {
+            this.playlists = playlistRes.data.playlists;
+          });
       });
   },
 };

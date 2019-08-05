@@ -6,6 +6,8 @@
             </router-link>
         </div>
 
+        <p v-if="isLoading"><strong>loading playlists...</strong></p>
+
         <div class="playlists">
             <template v-for="playlist in playlists">
                 <div class="card card--light" v-if="playlist.id" :key="playlist.id">
@@ -34,12 +36,15 @@ export default {
   data() {
     return {
       playlists: [],
+      isLoading: false,
     };
   },
   created() {
+    this.isLoading = true;
     this.$http.get('playlists')
       .then((res) => {
         this.playlists = res.data.playlists;
+        this.isLoading = false;
       });
   },
 };

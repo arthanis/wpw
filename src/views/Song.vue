@@ -38,7 +38,6 @@ export default {
     this.$http.get(`songs/${this.$route.params.id}`)
       .then((res) => {
         this.song = res.data.song;
-
         this.$http.get('playlists')
           .then((playlistRes) => {
             playlistRes.data.playlists.forEach((playlist) => {

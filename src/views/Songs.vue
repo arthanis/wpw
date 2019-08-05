@@ -5,9 +5,9 @@
         <ul class="list-group">
             <li class="list-group-item" :data-id="song.id" v-for="song in songs" :key="song.id">
                 <div class="song">
-<!--                    <div class="song__checkbox mr-3">-->
-<!--                        <input type="checkbox">-->
-<!--                    </div>-->
+                    <div class="song__checkbox mr-3">
+                        <input type="checkbox">
+                    </div>
                     <div class="song__meta">
                         <p class="song__title">{{ song.title }}</p>
                         <p class="song__perfomer">{{ song.performer}}</p>

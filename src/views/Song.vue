@@ -9,8 +9,14 @@
                     <p class="mb-0">{{ playlist.name }}</p>
 
                     <button class="card-action btn btn-primary btn--icon-right"
-                            @click="addSongToPlaylist(playlist.id)">
+                            v-if="!playlist.isAdded"
+                            @click="addSongToPlaylist(playlist)">
                         Add <i class="fa fa-plus"></i>
+                    </button>
+                    <button class="card-action btn btn-danger btn--icon-right"
+                            v-else
+                            @click="removeSongFromPlaylist(playlist)">
+                        Remove <i class="fa fa-close"></i>
                     </button>
                 </div>
             </div>
@@ -32,19 +38,32 @@ export default {
     this.$http.get(`songs/${this.$route.params.id}`)
       .then((res) => {
         this.song = res.data.song;
-      });
 
-    this.$http.get('playlists')
-      .then((res) => {
-        this.playlists = res.data.playlists;
+        this.$http.get('playlists')
+          .then((playlistRes) => {
+            playlistRes.data.playlists.forEach((playlist) => {
+              const isAdded = playlist.songs.filter(song => song.songId === this.song.id);
+
+              playlist.isAdded = isAdded.length > 0;
+            });
+
+            this.playlists = playlistRes.data.playlists;
+          });
       });
   },
   methods: {
-    addSongToPlaylist(playlistId) {
-      this.$http.post(`playlists/${playlistId}/songs`, {
+    addSongToPlaylist(playlist) {
+      playlist.isAdded = true;
+
+      this.$http.post(`playlists/${playlist.id}/songs`, {
         songId: this.song.id,
         position: 1,
       });
+    },
+    removeSongFromPlaylist(playlist) {
+      playlist.isAdded = false;
+
+      this.$http.delete(`playlists/${playlist.id}/songs/${this.song.id}`);
     },
   },
 };

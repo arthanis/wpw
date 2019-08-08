@@ -41,9 +41,7 @@ export default {
         this.$http.get('playlists')
           .then((playlistRes) => {
             playlistRes.data.playlists.forEach((playlist) => {
-              const isAdded = playlist.songs.filter(song => song.songId === this.song.id);
-
-              playlist.isAdded = isAdded.length > 0;
+              playlist.isAdded = playlist.songs.some(song => song.songId === this.song.id);
             });
 
             this.playlists = playlistRes.data.playlists;
